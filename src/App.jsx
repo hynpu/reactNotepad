@@ -1,12 +1,20 @@
 import "./styles.css"
+import { useState } from "react"
 
 export default function App(){
+  const [newItem, setNewItem] = useState("")
+
   return (
     <>
       <form action="" className="new-item-form">
         <div className="form-row">
           <label htmlFor="item">new item</label>
-          <input type="text" id='item' />
+          <input 
+            value={newItem} 
+            onChange={e=>setNewItem(e.target.value)} 
+            type="text" 
+            id='item' 
+          />
         </div>
         <button className="btn">add</button>
       </form>
